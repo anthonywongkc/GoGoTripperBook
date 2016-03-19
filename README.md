@@ -1,4 +1,10 @@
 # GoGoTripperBook
+## How to start app?
+- For first time only: `npm install` to install all node packages
+- then, go terminal and type: `npm start` to start app
+- go to: http://localhost:3000 in browser or using `curl`
+
+
 ## Useful Tools
 - atom
   - minimap
@@ -23,7 +29,3 @@ module.exports.index = function (req, res) {
 }
 ```
 - ./views/\*.jade: template
-
-## How to start app?
-- go terminal and type: `npm start`
-- go to: http://localhost:3000 in browser or using `curl`
