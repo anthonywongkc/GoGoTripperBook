@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routing Pages to functions //
 ////////////////////////////////
 app.get('/', routes.index);
+app.get('/plans', routes.plans);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

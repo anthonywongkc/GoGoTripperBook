@@ -1,9 +1,65 @@
 extends layout
 
+block header
+  link(rel="stylesheet" href="/stylesheets/index.css")
+  
 block content
-  .jumbotron
+  header.business-header
     .container
-      h1= title
-      p Welcome to #{title}
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      a(class="btn btn-primary btn-lg", href="#") Learn more
+      .row
+        .col-lg-12
+          h1.tagline Search Engine here
+  // Page Content
+  .container
+    hr
+    .row
+      .col-sm-8
+        h2 What We Do
+        p
+          | Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.
+        p
+          a.btn.btn-default.btn-lg(href='#') Call to Action »
+      .col-sm-4
+        h2 Contact Us
+        address
+          strong Start Bootstrap
+          br
+          | 3481 Melrose Place
+          br
+          | Beverly Hills, CA 90210
+          br
+        address
+          abbr(title='Phone') P:
+          | (123) 456-7890
+          br
+          abbr(title='Email') E:
+          a(href='mailto:#') name@example.com
+    // /.row
+    hr
+    .row
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #1
+        p
+          | These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #2
+        p
+          | The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #3
+        p
+          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    // /.row
+    hr
+    // Footer
+    footer
+      .row
+        .col-lg-12
+          p Copyright © Your Website 2014
+      // /.row
+  // /.container
