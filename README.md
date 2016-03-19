@@ -17,11 +17,11 @@ var routes = require('./routes/index');
 app.get('/', routes.index);
 ```
 - ./routes/\*.js: all handlers
-  ```javascript
-  module.exports.index = function (req, res) {
+```javascript
+module.exports.index = function (req, res) {
     res.render('jadefile', {object: 'object'});
-  }
-  ```
+}
+```
 - ./views/\*.jade: template
 
 ## How to start app?
