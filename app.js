@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // Define Router Paths //
 ////////////////////////
 var routes = require('./routes/index');
-
+var map = require('./routes/map');
 
 var app = express();
 // view engine setup
@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routing Pages to functions //
 ////////////////////////////////
 app.get('/', routes.index);
+app.get('/map', map.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

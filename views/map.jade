@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #map(style= "height:80%; width:100%;")
+  #press.btn.btn-primary.btn-lg press!
+block scriptcontent
+  - var apikey = 'AIzaSyBkhs7rfZT4W6AEiiarKPkmvdpnUYCXKPc';
+  script(src='https://maps.googleapis.com/maps/api/js?key=#{apikey}&libraries=places&callback=initMap', async='', defer='')
+  script(src='/javascripts/googlemap.js')
+  
