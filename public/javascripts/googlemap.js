@@ -1,4 +1,5 @@
 // to be served at client side
+
 var map;
 var cuhk;
 var service;
