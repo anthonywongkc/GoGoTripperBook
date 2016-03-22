@@ -18,11 +18,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //stormpath for user login
-// app.use(stormpath.init(app, {
-//     apiKeyFile: './.stormpath/apiKey-2QJ7LR50XMN7ZC4Q4FMM6M49C.properties',
-//     secretKey: 'some_random_long_string_here',
-//     application: 'https://api.stormpath.com/v1/applications/5gW8aKppk8lSg2MUEdvWX',
-// }));
+app.use(stormpath.init(app, {
+    apiKeyFile: './.stormpath/apiKey-2QJ7LR50XMN7ZC4Q4FMM6M49C.properties',
+    secretKey: 'some_random_long_string_here',
+    application: 'https://api.stormpath.com/v1/applications/5gW8aKppk8lSg2MUEdvWX'
+}));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
