@@ -18,3 +18,10 @@ module.exports.about = function (req, res) {
     project: {name: 'Go Go Tripbook'}
   });
 };
+
+module.exports.planner = function (req, res) {
+  res.render('planner', {
+    title: 'Planner',
+    project: {name: 'Go Go Tripbook'}
+  });
+};
