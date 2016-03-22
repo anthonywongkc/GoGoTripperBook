@@ -11,3 +11,10 @@ module.exports.plans = function (req, res) {
     project: {name: 'Go Go Tripbook'}
   });
 };
+
+module.exports.about = function (req, res) {
+  res.render('about', {
+    title: 'About Us',
+    project: {name: 'Go Go Tripbook'}
+  });
+};
