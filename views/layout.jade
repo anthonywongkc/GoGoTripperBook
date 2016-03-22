@@ -1,3 +1,4 @@
+doctype html
 html
   head
     title= title
@@ -12,13 +13,14 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href="#") 
+          a.navbar-brand(href="#") TripHub
 
         #navbar-inverse.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active: a( href="/") Home
-            li: a( href="#about" ) Trip Planner
-            li: a( href="/plans" ) Trip Plans
+            li: a( href="/planner" ) Trip Planner
+            li: a( href="/plans" ) Browse Plans
+            li: a( href="/about" ) About Us
             li.dropdown
               a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) Dropdown 
                   span.caret
@@ -30,6 +32,16 @@ html
                   li.dropdown-header Nav header
                   li: a( href="#" ) Separated link
                   li: a( href="#" ) One more separated link
+          ul.nav.navbar-nav.navbar-right
+            //TODO: login system
+            li: a( href="") Login
+            li: a( href="") Sign Up
+            li.dropdown
+              a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) Upload
+                span.caret
+              ul.dropdown-menu( role="menu" )
+                  li: a(href="") Plan
+                  li: a(href="") Blog
     block content
 
     script(src="https://code.jquery.com/jquery-1.12.2.min.js", integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=", crossorigin="anonymous")

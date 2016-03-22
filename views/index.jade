@@ -4,11 +4,29 @@ block header
   link(rel="stylesheet" href="/stylesheets/index.css")
   
 block content
+  // Search Engine
   header.business-header
     .container
       .row
         .col-lg-12
           h1.tagline Search Engine here
+        .col-md-12
+          .btn-group(role='group', aria-label='...')
+            // Search Options
+            button.btn.btn-default(type='button') Plans
+            button.btn.btn-default(type='button') Locations
+      .row
+        .col-md-5
+          form(action='#', method='get')
+          .input-group
+            // USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH
+            input#system-search.form-control(name='q', placeholder='Search for', required='')
+            span.input-group-btn
+              button.btn.btn-default(type='submit')
+                i.glyphicon.glyphicon-search
+        .col-md-12
+          table.table.table-list-search
+            thead
   // Page Content
   .container
     hr
@@ -36,7 +54,32 @@ block content
           br
           abbr(title='Email') E:
           a(href='mailto:#') name@example.com
+          
+    // Suggestions...
+    // Destinations
+    h1 Popular Destinations
     // /.row
+    hr
+    .row
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #1
+        p
+          | These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #2
+        p
+          | The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      .col-sm-4
+        img.img-circle.img-responsive.img-center(src='http://placehold.it/300x300', alt='')
+        h2 Marketing Box #3
+        p
+          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    br
+    br
+    // Plans
+    h1 Popular Plans
     hr
     .row
       .col-sm-4
@@ -60,6 +103,6 @@ block content
     footer
       .row
         .col-lg-12
-          p Copyright © Your Website 2014
+          p Copyright © TripHub 2016
       // /.row
   // /.container

@@ -11,9 +11,10 @@
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "jade": "~1.11.0",
+    "mongoose": "^4.4.8",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0",
-    "multer": "~1.1.0"
+    "multer": "~1.1.0",
+    "serve-favicon": "~2.3.0"
   },
   "description": "- For first time only: `npm install` to install all node packages - then, go terminal and type: `npm start` to start app - go to: http://localhost:3000 in browser or using `curl`",
   "main": "app.js",
