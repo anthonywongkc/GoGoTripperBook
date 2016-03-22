@@ -5,15 +5,16 @@ block header
     script(src='/js/planner_controller.js')
     
 block content
-    div(ng-app='gmap' ng-controller='MapController as mapcont')
-      h3 Double Click marker to add
-      #map(style='width: 500px; height: 500px')
-      input(type='number', step='0.001', ng-model='mapcont.lat', ng-change='mapcont.refresh()')
-      input(type='number', step='0.001', ng-model='mapcont.lng', ng-change='mapcont.refresh()')
-      h3 {{mapcont.lat}},{{mapcont.lng}}
-      button(type='button', ng-click='mapcont.search()') Search!
-      button(type='button', ng-click='mapcont.delete()') Clear!
-      ul(ng-repeat='p in mapcont.places')
-        li {{p}}
-      button(type='button', ng-click='mapcont.save()') Save!
-      script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhs7rfZT4W6AEiiarKPkmvdpnUYCXKPc&libraries=places')
+    .container
+        div(ng-app='gmap' ng-controller='MapController as mapcont')
+            h3 Double Click marker to add
+            #map(style='width: 500px; height: 500px')
+            input(type='number', step='0.001', ng-model='mapcont.lat', ng-change='mapcont.refresh()')
+            input(type='number', step='0.001', ng-model='mapcont.lng', ng-change='mapcont.refresh()')
+            h3 {{mapcont.lat}},{{mapcont.lng}}
+            button(type='button', ng-click='mapcont.search()') Search!
+            button(type='button', ng-click='mapcont.delete()') Clear!
+            ul(ng-repeat='p in mapcont.places')
+                li {{p}}
+            button(type='button', ng-click='mapcont.save()') Save!
+            script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhs7rfZT4W6AEiiarKPkmvdpnUYCXKPc&libraries=places')
