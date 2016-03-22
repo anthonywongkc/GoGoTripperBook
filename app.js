@@ -17,6 +17,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//stormpath for user login
 app.use(stormpath.init(app, {
   
 }));
