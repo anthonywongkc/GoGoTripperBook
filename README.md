@@ -1,6 +1,8 @@
 # GoGoTripperBook
 ## How to start app?
 - Set the API key and secret.
+    |-----UNIX: Type "run activate.sh" in terminal
+    |-----Window: Type "activate.bat" in cmd.exe
 - (For first time only: `npm install` to install all node packages)
 - Go to the terminal and type: `npm start` to start the app
 - go to: http://localhost:3000 in browser or using `curl`
