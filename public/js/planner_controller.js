@@ -1,73 +1,43 @@
-var gmap = angular.module('gmap', [])
-.controller('MapController', ['$scope',function ($scope) {
+var gmap = angular.module('gmap', ['gservice'])
+.controller('MapController', ['$scope', 'gservice', '$rootScope',function ($scope, gservice, $rootScope) {
   var self = this;
-  this.lat = 22.3782353;
-  this.lng = 114.1807784;
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: {lat: this.lat, lng: this.lng}
-  });
-
-  map.addListener('click',function (event) {
-    self.lat = event.latLng.lat();
-    self.lng = event.latLng.lng();
+  this.lat = 22.209081450326654; //22.3782353;
+  this.lng = 114.03117510998538; //114.180778;
+  this.places = [];
+  $rootScope.$on('gservice:centerChanged', function (event,arg) {
+    //console.log(arg.lat, arg.lng);
+    self.lat  = arg.lat;
+    self.lng  = arg.lng;
+    // if(!$scope.$$phase)
     $scope.$apply();
   });
 
+  $rootScope.$on('gservice:addPlace', function (event, place) {
+    self.places.push(place);
+    $scope.$apply();
+  })
 
-  var service = new google.maps.places.PlacesService(map);
+
+  this.init = function () {
+    gservice.init(self.lat, self.lng);
+  }
+
   this.search = function () {
-    var request = {
-      bounds: map.getBounds(),
-      type: ['store']
-    }
-    service.nearbySearch(request, function(results, status) {
-        console.log(results);
-        results.forEach(function(r) {
-          console.log(r.name);
-          createMarker(r);
-        });
-      });
+    gservice.search();
   }
 
-
-  this.places = [];
-
-  var markers = [];
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-
-    });
-    var infowindow = new google.maps.InfoWindow();
-
-    google.maps.event.addListener(marker, 'mouseover', function() {
-      infowindow.setContent("<b>" +place.name + "</b>");
-      infowindow.open(map, this);
-    });
-    google.maps.event.addListener(marker, 'mouseout', function() {
-      infowindow.close();
-    });
-    google.maps.event.addListener(marker, 'dblclick', function() {
-      self.places.push(place.name);
-      $scope.$apply();
-    });
-
-    markers.push(marker);
+  this.clearMarkers = function () {
+    gservice.clearMarkers();
   }
-
-  this.delete = function () {
-    markers.forEach(function (m) {
-      console.log(123);
-      m.setMap(null);
-    });
-    markers = [];
-  }
-
-  this.save = function () {
-    window.alert(this.places);
-  }
+  //
+  // this.getPhoto = function (place) {
+  //   if(place != null && place.photos.length > 0) {
+  //     return p.photos[0].getUrl({maxWidth: 100, maxHeight: 80});
+  //   } else {
+  //     return '';
+  //   }
+  // }
+  // this.save = function () {
+  //   window.alert(this.places);
+  // }
 }]);

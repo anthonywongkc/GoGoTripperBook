@@ -3,18 +3,18 @@ extends layout
 block header
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js')
     script(src='/js/planner_controller.js')
-    
+    script(src='/js/gservice.js')
+
 block content
     .container
-        div(ng-app='gmap' ng-controller='MapController as mapcont')
-            h3 Double Click marker to add
-            #map(style='width: 500px; height: 500px')
-            input(type='number', step='0.001', ng-model='mapcont.lat', ng-change='mapcont.refresh()')
-            input(type='number', step='0.001', ng-model='mapcont.lng', ng-change='mapcont.refresh()')
-            h3 {{mapcont.lat}},{{mapcont.lng}}
-            button(type='button', ng-click='mapcont.search()') Search!
-            button(type='button', ng-click='mapcont.delete()') Clear!
-            ul(ng-repeat='p in mapcont.places')
-                li {{p}}
-            button(type='button', ng-click='mapcont.save()') Save!
-            script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhs7rfZT4W6AEiiarKPkmvdpnUYCXKPc&libraries=places')
+        div(ng-app='gmap', ng-controller='MapController as mapcont')
+          h1 Double click marker to add
+          #map(style='width: 500px; height: 500px')
+          p {{mapcont.lat}},{{mapcont.lng}}
+          button(type='button', ng-click='mapcont.search()') Search!
+          ul(ng-repeat='p in mapcont.places track by $index')
+            li
+              img(style='width: 100px; height: 80px; background-color: grey', ng-src="{{ (p.hasOwnProperty('photos')) ? p.photos[0].getUrl({maxWdith:100, maxHeight:80}) : ''}}")
+              |  {{p.name}}
+          button(type='button', ng-click='mapcont.save()') Save!
+          script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhs7rfZT4W6AEiiarKPkmvdpnUYCXKPc&libraries=places')
