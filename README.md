@@ -1,25 +1,25 @@
 # GoGoTripperBook
 ## How to start app?
-- Set the API key and secret.
-    |-----UNIX: Type "run activate.sh" in terminal
-    |-----Window: Type "activate.bat" in cmd.exe
-- (For first time only: `npm install` to install all node packages)
-- Go to the terminal and type: `npm start` to start the app
-- go to: http://localhost:3000 in browser or using `curl`
+1. Set the API key and secret.
+	* UNIX: Type "run activate.sh" in terminal
+	* Window: Type "activate.bat" in cmd.exe
+2. (For first time only: `npm install` to install all node packages)
+3. Go to the terminal and type: `npm start` to start the app
+4. go to: http://localhost:3000 in browser or using `curl`
 
 
 ## Useful Tools
-- atom
-  - minimap
-  - ternjs (code intellegence/autocomplete)
-  - atom-jade (jade syntax highlighting)
-  - indent-guide-improved
-  - markdown preview (pre-installed) (ctrl-shift-M)
+* atom
+  1. minimap
+  2. ternjs (code intellegence/autocomplete)
+  3. atom-jade (jade syntax highlighting)
+  4. indent-guide-improved
+  5. markdown preview (pre-installed) (ctrl-shift-M)
 
 ## Structure
-- app.js: routing URL to functions
-  - step1: define route source file
-  - step2: HTTP method(GET/POST), path, the handler
+* app.js: routing URL to functions
+  1. step1: define route source file
+  2. step2: HTTP method(GET/POST), path, the handler
 
   ```javascript
 var routes = require('./routes/index');
