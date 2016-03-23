@@ -1,7 +1,8 @@
 # GoGoTripperBook
 ## How to start app?
-- For first time only: `npm install` to install all node packages
-- then, go terminal and type: `npm start` to start app
+- Set the API key and secret.
+- (For first time only: `npm install` to install all node packages)
+- Go to the terminal and type: `npm start` to start the app
 - go to: http://localhost:3000 in browser or using `curl`
 
 

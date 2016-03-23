@@ -19,7 +19,7 @@ app.set('view engine', 'jade');
 
 //stormpath for user login
 app.use(stormpath.init(app, {
-    
+
 }));
 
 // uncomment after placing your favicon in /public
